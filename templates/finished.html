@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block main %}
+<h4 class="font-weight-bold">Färdig! <a class="btn btn-primary" href="/logout">Logga ut</a></h4>
+<img src="https://c.tenor.com/HARh7y5HeRkAAAAC/seinfeld-fireworks.gif" alt="Kramer celebrating" class="img-thumbnail rounded mx-auto d-block">
+
+
+<p></p>
+<div class="alert alert-primary mx-auto">
+<p>Såvida inte du klickade fel på föregående:</p>
+<form action="/" method="post">
+    <input name="filename" type="hidden" value="{{filename}}")>
+    <input name="action" type="hidden" value="undo")>
+    <input type="submit" class="btn btn-info float-right btn-lg" value="&#9100;"></button>
+</form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <h4 class="font-weight-bold">Tweets kvar att annotera: {{length}}</h4>
+    <br>
+    <div class="alert alert-primary mx-auto">
+        <h4 class="alert-heading text-capitalize">{{word}}</h4>
+        <p>{{tweet}}</p>
+    </div>
+    <br>
+    {% if history != [] %}
+    <form action="/" method="post">
+        <input name="filename" type="hidden" value="{{filename}}")>
+        <input name="action" type="hidden" value="undo")>
+        <input type="submit" class="btn btn-info btn-lg" value="&#9100;" title="Gå tillbaka"></input>
+    </form>
+    {% endif %}
+    <form action="/" method="post">
+        <input name="filename" type="hidden" value="{{filename}}")>
+        <input name="action" type="hidden" value="h")>
+        <input type="submit" class="btn btn-lg btn-primary" value="Hundvissla"></input>
+    </form>
+    <form action="/" method="post">
+        <input name="filename" type="hidden" value="{{filename}}")>
+        <input name="action" type="hidden" value="k")>
+        <input type="submit" class="btn btn-lg btn-primary" value="Konventionell"></input>
+    </form>
+    <form action="/" method="post">
+        <input name="filename" type="hidden" value="{{filename}}")>
+        <input name="action" type="hidden" value="n")>
+        <input type="submit" class="btn btn-lg btn-info" value="N/A" title="i.e. Går ej att säga"></input>
+    </form>
+{% endblock %}
+
+{% block footer %}
+<div style="display: flex;">
+<!-- LEFT SIDE -->
+<div id="left_side">
+<a href="https://github.com/skogsgren/tweet-annotation-dogwhistles" target="_blank">Källkod</a>
+<br>
+<a href="/guidelines" target="_blank">Annoteringsriktlinjer</a>
+</div>
+
+<!-- LOGOUT BUTTON -->
+<div id="logout_group">
+<span>Inloggad som {{user_id}}</span> <a  class="btn btn-secondary" href="/logout">Logga ut</a>
+</div>
+</div>
+{% endblock %}

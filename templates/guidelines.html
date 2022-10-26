@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Annoteringsriktlinjer
+{% endblock %}
+
+{% block main %}
+    <div id="guidelines">
+        {{md|markdown}}
+    </div>
+{% endblock %}
